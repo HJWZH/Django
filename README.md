@@ -1,2 +1,0 @@
-# Django
-On the web
