@@ -6,19 +6,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1,
     shrink-to-fit=no">
-  <title>Learning Log</title>
+  <title>Baboon协会</title>
 
   {% bootstrap_css %}
   {% bootstrap_javascript jquery='full' %}
 
 </head>
 <body>
-
+  
   <nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">
 
     <a class="navbar-brand" href="{% url 'learning_logs:index'%}">
-        Learning Log</a>
-
+        Baboon协会</a>
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse"
         data-target="#navbarCollapse" aria-controls="navbarCollapse"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -27,24 +27,27 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="{% url 'learning_logs:topics'%}">
-              Topics</a></li>
+              主题</a></li>
       </ul>
       <ul class="navbar-nav ml-auto">
         {% if user.is_authenticated %}
           <li class="nav-item">
-            <span class="navbar-text"}">Hello, {{ user.username }}.</span>
+            <span class="navbar-text"}">欢迎你, {{ user.username }}.</span>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'users:logout' %}">Log out</a>
+            <a class="nav-link" href="{% url 'users:logout' %}">退出</a>
           </li>
         {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'users:register' %}">Register</a>
+            <a class="nav-link" href="{% url 'users:register' %}">注册</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'users:login' %}">Log in</a></li>
+            <a class="nav-link" href="{% url 'users:login' %}">登录</a></li>
         {% endif %}
+      
       </ul>
+      <a href="https://www.pythonanywhere.com/">管理网站</a>
+      
     </div>
 
   </nav>
@@ -56,6 +59,7 @@
     <div>
       {% block content %}{% endblock content %}
     </div>
+    
   </main>
 
 </body>
