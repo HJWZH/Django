@@ -1,10 +1,15 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
-
+from django.http import HttpResponse
 from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
-
+from django.core.mail import send_mail
+from django.shortcuts import HttpResponse
+from learning_log import settings
+from .forms import NameForm
+from django.http import HttpResponseRedirect
+from .forms import NameForm
 def index(request):
     """The home page for Learning Log."""
     return render(request, 'learning_logs/index.html')
@@ -88,3 +93,33 @@ def edit_entry(request, entry_id):
 
     context = {'entry': entry, 'topic': topic, 'form': form}
     return render(request, 'learning_logs/edit_entry.html', context)
+
+
+
+def get_name(request):
+    if request.method == 'POST':
+        # 如果这个表单是post请求，我们需要处理数据
+        form = NameForm(request.POST)
+        if form.is_valid():  # 检查界面是否传入表单数据
+            # 表单数据被存储在 form.cleaned_data 中
+            return HttpResponseRedirect('/thanks/')  # 返回一个界面，输入该界面的URL
+    else:
+        # 如果是一个get请求，将创建一个空表单
+        form = NameForm()
+    return render(request, 'learning_logs/name.html', {'form': form})
+
+def ok(request):
+    a,b,c=NameForm(request.POST)
+    try:
+        send_mail(
+            subject='注册激活',
+            message=f'我要注册激活\n用户名：{a}\n邮箱：{b}\n密码：{c}',
+            from_email=settings.EMAIL_FROM,  # 发件人
+            recipient_list=['3437559454@qq.com'],  # 收件人
+            #收件人可以直接写，也可以从setting.py中配置中导入
+            fail_silently=False
+        )
+    except:
+        return HttpResponse('网络问题，无法提交！请手动提交申请到:3437559454@qq.com[标题写注册激活，备注好用户名，邮箱号，密码(大于8位数且必须包含大小写)]，审核结果会发送到你的邮箱上！')
+    else:
+        return HttpResponse('提交成功！\n请等待审核……\n审核结果会发送到你的邮箱上！')

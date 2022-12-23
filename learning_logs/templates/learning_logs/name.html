@@ -1,0 +1,11 @@
+{% load bootstrap4 %}
+{% block content %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+<form action="/users/register/ok/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <p></p>
+    <input type="Submit" value="提交申请">
+</form>
+{% endblock content %}

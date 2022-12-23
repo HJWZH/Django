@@ -23,7 +23,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 SECRET_KEY = 'c&=x%v4k!%$bn&9!)*b5%-0ao)fsrl6@mbpd8t8zt*b*5#*4h0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -37,7 +37,6 @@ INSTALLED_APPS = [
 
     # Third party apps.
     'bootstrap4',
-
    # Default django apps.
     'django.contrib.admin',
     'django.contrib.auth',
@@ -126,7 +125,33 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+HERE = os.path.dirname(os.path.abspath(__file__))
 
+HERE = os.path.join(HERE, '../')
+
+STATICFILES_DIRS = (
+    "C:/Users/Magicbook/Desktop/python/django/static",
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+
+    # Always use forward slashes, even on Windows.
+
+    # Don't forget to use absolute paths, not relative paths.
+
+    os.path.join(HERE, 'static/'),
+
+)
 # My settings
 LOGIN_URL = 'users:login'
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 25
+EMAIL_USE_TLS = True  # 这里必须是 True，否则发送不成功
+EMAIL_FROM = '3437559454@qq.com'  # 收件人看到的发件人
+EMAIL_HOST_USER = "3437559454@qq.com" # 发送邮件的邮箱，变成你自己的
+EMAIL_HOST_PASSWORD = "afugjvfafbjpdbda"  # 发送短信之后获取的授权码
+EMAIL_USE_TLS = True  # 是否使用TLS安全传输协议(用于在两个通信应用程序之间提供保密性和数据完整性。)
+EMAIL_USE_SSL = False  # 是否使用SSL加密，qq企业邮箱要求使用
+EMAIL_PORT = 25  # 发件箱的SMTP服务器端口# 上面配置可以不动，下面配置修改为自己的EMAIL_HOST_USER = 'tin@163.com'  # 发送邮件的邮箱地址
+EMAIL_TO_USER_LIST = ['3437559454@qq.com']   # 此字段是可选的，用来配置收件人列表

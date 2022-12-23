@@ -1,13 +1,15 @@
 {% extends "learning_logs/base.html" %}
 
 {% block content %}
+    <h1>通知:</h1>
+    <strong><p style="color:red">请咨询HJ(WZH)管理员注册</p></strong>
+    <a href="/users/register/send_email/" style="color: grey;">点我向管理员注册账号</a>
 
+{% endblock content %}
   <form method="post" action="{% url 'users:register' %}">
     {% csrf_token %}
     {{ form.as_p }}
-        
+
     <button name="submit">注册</button>
     <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
   </form>
-    
-{% endblock content %}
