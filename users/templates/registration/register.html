@@ -1,15 +1,33 @@
 {% extends "learning_logs/base.html" %}
-
+{% load bootstrap4 %}
 {% block content %}
     <h1>通知:</h1>
     <strong><p style="color:red">请咨询HJ(WZH)管理员注册</p></strong>
     <a href="/users/register/send_email/" style="color: grey;">点我向管理员注册账号</a>
-
+    <ul class="navbar-nav ml-auto">
+  {% if user.username == 'wangziheng' %}
+  <p></p>
+  <p></p>
+    <h5>
+      {{ user.username }}为用户注册：
+    </h5>
+    <form method="post" action="{% url 'users:register' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+  
+      <button name="submit">注册</button>
+    </form>
+  {% else %}
+    {% if user.is_authenticated %}
+    <p> </p>
+    <p> </p>
+    <h4 style="color: red;">权限不足！！！仅限管理员HJ(WZH)可进行注册！！！</h4>
+    {% else %}
+    <p></p>
+    {% endif %}
+  {% endif %}
+  </ul>
 {% endblock content %}
-  <form method="post" action="{% url 'users:register' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
 
-    <button name="submit">注册</button>
     <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
   </form>

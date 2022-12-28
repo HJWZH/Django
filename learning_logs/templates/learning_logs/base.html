@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1,
     shrink-to-fit=no">
   <title>Baboon协会</title>
-  <link href="https://thumbnail0.baidupcs.com/thumbnail/f20520094v844734b822adab8f3daa86?fid=837566511-250528-781929212076743&rt=pr&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-656Z%2b8JpabC6ygZTesNRvWku%2b9E%3d&expires=8h&chkbd=0&chkv=0&dp-logid=193788501616936365&dp-callid=0&time=1671750000&size=c1999_u1999&quality=100&vuk=837566511&ft=image" rel="icon" type="image/x-ico">
+  <link href="https://imglf4.lf127.net/img/849b290ea4e99b85/RE90NFpEV1NHVzNwQnRlNVhMUXpSS2NINlJ3VzZUVnVZd3dHaE5Ja2haST0.png?imageView&thumbnail=1000x0&type=png" rel="icon" type="image/x-ico">
 
   {% bootstrap_css %}
   {% bootstrap_javascript jquery='full' %}
@@ -17,7 +17,7 @@
 <body>
   
   <nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">
-    <img src="https://thumbnail0.baidupcs.com/thumbnail/f20520094v844734b822adab8f3daa86?fid=837566511-250528-781929212076743&rt=pr&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-656Z%2b8JpabC6ygZTesNRvWku%2b9E%3d&expires=8h&chkbd=0&chkv=0&dp-logid=193788501616936365&dp-callid=0&time=1671750000&size=c1999_u1999&quality=100&vuk=837566511&ft=image" height="45" width="45">
+    <img src="https://imglf4.lf127.net/img/849b290ea4e99b85/RE90NFpEV1NHVzNwQnRlNVhMUXpSS2NINlJ3VzZUVnVZd3dHaE5Ja2haST0.png?imageView&thumbnail=1000x0&type=png" height="45" width="45">
 
     <a class="navbar-brand" href="{% url 'learning_logs:index'%}">
         Baboon协会</a>
@@ -40,6 +40,12 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'users:logout' %}">退出</a>
           </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'users:register' %}">注册用户</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="users/remove">删除用户</a>
+        </li>
         {% else %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'users:register' %}">注册</a>

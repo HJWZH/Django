@@ -9,7 +9,6 @@ from learning_log import settings
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-
 def register(request):
     """Register a new user."""
     if request.method != 'POST':
@@ -28,13 +27,4 @@ def register(request):
     # Display a blank or invalid form.
     context = {'form': form}
     return render(request, 'registration/register.html', context)
-def send_email(request):
-    send_mail(
-        subject='注册激活',
-        message='我要注册激活',
-        from_email=settings.EMAIL_FROM,  # 发件人
-        recipient_list=['3437559454@qq.com'],  # 收件人
-        #收件人可以直接写，也可以从setting.py中配置中导入
-        fail_silently=False
-    )
-    return HttpResponse('OK')
+

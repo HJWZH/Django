@@ -23,4 +23,5 @@ urlpatterns = [
     path('users/register/send_email/', views.get_name, name="send_email"),
     path('users/register/ok/', views.ok, name="ok"),
     #path('image/code/', views.img_code,name='code'),
+    path('users/remove/',views.remove,name='remove'),
 ]
