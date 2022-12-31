@@ -1,13 +1,20 @@
 {% extends "learning_logs/base.html" %}
 
 {% block page_header %}
+<script>
+  var noPrint=true;
+  var noCopy=false;
+  var noScreenshot=true;
+  var autoBlur=false;
+</script>
+<script type="text/javascript" src="https://pdfanticopy.com/noprint.js"></script>
   <div class="jumbotron">
     <h1 class="display-3">欢迎来到Baboon协会</h1>
 
     <p class="lead">Welcome to the Baboon baboonassociation</p>
     
     <a class="nav-link" href="{% url 'learning_logs:topics'%}"
-        role="button">新建主题 &raquo;</a>
+        role="button">新建主题 &raquo;</a><a class="btn btn-primary input-sm" href="{% url 'learning_logs:topics'%}"role="button">浏览主题 &raquo;</a>
     </div>
     <h3><strong><p style="color:red">喜报！</p></strong></h3>
     <div class="test1">

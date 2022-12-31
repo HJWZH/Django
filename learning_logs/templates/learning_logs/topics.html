@@ -8,13 +8,13 @@
   <ul>
     {% for topic in topics %}
       <li><h3>
-        <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
+        <a style="color: gray;" href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
       </h3></li>
     {% empty %}
       <li><h3>没有条目</h3></li>
     {% endfor %}
   </ul>
 
-  <h3><a href="{% url 'learning_logs:new_topic' %}">添加新主题</a></h3>
+  <h3><a class="btn btn-primary input-sm" href="{% url 'learning_logs:new_topic' %}">添加新主题</a></h3>
 
 {% endblock content %}

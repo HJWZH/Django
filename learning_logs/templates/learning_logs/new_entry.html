@@ -8,7 +8,7 @@
   <form action="{% url 'learning_logs:new_entry' topic.id %}" method='post'>
     {% csrf_token %}
     {{ form.as_p }}
-    <button name='submit'>添加条目</button>
+    <button class="btn btn-primary input-sm" name='submit'>添加条目</button>
   </form>
     
 {% endblock content %}

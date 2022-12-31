@@ -6,7 +6,7 @@
   <form action="{% url 'learning_logs:new_topic' %}" method='post'>
     {% csrf_token %}
     {{ form.as_p }}
-    <button name="submit">提交</button>
+    <button class="btn btn-primary input-sm" name="submit">提交</button>
   </form>
     
 {% endblock content %}
