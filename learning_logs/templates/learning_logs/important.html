@@ -1,0 +1,67 @@
+{% extends "learning_logs/base.html" %}
+{% load bootstrap4 %}
+{% block content %}
+{% bootstrap_css %}
+<style>
+    body{ font-family:"微软雅黑"}
+    .box{ font-family:"微软雅黑"}
+    cu{
+    font-size: 20px;
+}
+</style>
+<body>
+    <ul class="navbar-nav ml-auto">
+        <li>
+            <cu style="color: black;">重大事件：</cu>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="color: grey;" href="{% url 'learning_logs:goodbye-mszhao' %}">赵老师离开实外西区</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: grey;" href="{% url 'learning_logs:we-are-married' %}">"我们"结婚了</a>
+        </li>
+    
+    </ul>
+    <hr/>
+    <ul class="navbar-nav ml-auto">
+        <li>
+            <cu style="color: black;">软件：</cu>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="color: grey;" href="{% url 'learning_logs:new_topic'%}">新建主题</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: grey;" href="{% url 'learning_logs:topics'%}">浏览主题</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="color: grey;" href="{% url 'learning_logs:brief-introduction'%}">网站简介</a>
+          </li>
+        
+    
+    </ul>
+    <hr/> 
+        <ul class="navbar-nav ml-auto">
+            <li>
+                <cu style="color: black;">管理员软件：</cu>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: grey;" href="{% url 'users:register' %}">注册用户</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: grey;" href="{% url 'learning_logs:remove' %}">删除用户</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: grey;" href="https://www.pythonanywhere.com/">管理网站</a>
+            </li>
+            
+        
+        </ul>
+    <hr/>
+
+      </div>
+  
+  
+
+  
+  </body>
+{% endblock content %}

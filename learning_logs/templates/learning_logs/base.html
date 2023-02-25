@@ -38,8 +38,8 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'learning_logs:topics'%}">
-              主题</a></li>
+          <a class="nav-link" href="{% url 'learning_logs:home'%}">
+              功能</a></li>
       </ul>
       <ul class="navbar-nav ml-auto">
         {% if user.is_authenticated %}
@@ -47,14 +47,8 @@
             <span class="navbar-text"}">欢迎你, {{ user.username }}.</span>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'users:logout' %}">退出</a>
+            <a class="nav-link" href="{% url 'users:logout' %}">退出登录</a>
           </li>
-          <li class="nav-item">
-              <a class="nav-link" href="{% url 'users:register' %}">注册用户</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="users/remove">删除用户</a>
-        </li>
         {% else %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'users:register' %}">注册</a>
@@ -62,9 +56,6 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'users:login' %}">登录</a></li>
         {% endif %}
-      
-      </ul>
-      <a href="https://www.pythonanywhere.com/">管理网站</a>
     </div>
 
   </nav>
@@ -80,5 +71,42 @@
   </main>
 
 </body>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 
+<style type="text/css">
+body {
+padding: 0;
+margin: 0 auto;
+}
+#footer {
+height: 100px;
+line-height: 100px;
+bottom: 0;
+width: 100%;
+text-align: center;
+background: grey;
+color: #fff;
+font-family: Arial;
+font-size: 12px;
+letter-spacing: 1px;
+}
+.content {
+height: 1800px;
+width: 100%;
+text-align: center;
+}
+</style>
+</head>
+<style>
+  no{
+    font-size: 120px;
+  }
+</style>
+&nbsp;
+<no style="text-indent:2em;"> </no>
+
+<body>
+<div id="footer">©2021-2023 baboonassociation &nbsp;&nbsp; 联系我们：3437559454@qq.com </div>
+</body>
 </html>

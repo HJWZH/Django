@@ -1,0 +1,84 @@
+{% extends "learning_logs/base.html" %}
+{% load bootstrap4 %}
+{% block content %}
+{% bootstrap_css %}
+
+<style>
+    body{ font-family:"微软雅黑"}
+    .box{ font-family:"微软雅黑"}
+    p {
+
+font-size: 20px;
+
+}
+b {
+
+font-size: 20px;
+
+}
+</style>
+<body>
+    <h1 id="hh"></h1>
+</body>
+<script type="text/javascript">
+    function station(x,y,z){
+        //当前时间
+        var now = Date.now(),
+            //结束时间
+            end = new Date(x,y-1,z),
+            ends = end.getTime();
+        var ss = ends - now;
+        var s = Math.floor(ss/1000);
+        //相差天数
+        var day = Math.floor(s / 60 / 60 / 24);
+        //相差小时数
+        var hours = Math.floor(s / 60 / 60 % 24);
+        //相差分钟数
+        var min = Math.floor(s / 60 % 60 );
+        //相差秒数
+        var sec = Math.floor(s % 60 );
+        var html = "距赵老师离开已有"+(-day-1)+"天"+(-hours-1)+"时"+(-min-1)+"分"+(-sec-1)+"秒";
+        hh.innerHTML = html;
+    }
+    station(2023,02,25);
+    //一秒一次调用
+    setInterval(function(){
+        station(2023,02,25);
+    },1000);
+</script>
+<style type="text/css">
+    #hh{
+        font-size: 50px;
+        text-align: center;
+    }
+</style>
+<p class="box">
+    亲爱的赵老师：</p>
+<p style="text-indent:2em;">
+            时光荏苒，岁月如梭。弹指之间，时间已过去一年半，在这段时间中，我们见证了责任、有爱、和蔼、体贴，您无微不至的关怀和体贴周到的服务，让我们这些初次远离家门的孩子重新感受到了家的温暖。一次次帮助,一次次呵护,让我们对您心生无数一次次的感动。赵老师，您和蔼可亲，您细心周到，您办事公道，您是令我们尊敬的老师，更是我们随时可以寻求帮助的朋友。</p>
+<p style="text-indent:2em;">    
+        如果有人问我，世界上最美的语言是什么，我想我会不假思索的回答是“谢谢”;如果有人问我，世界上最美的人是谁，我想我会毫不犹豫的回答，是您——赵老师！您是辛勤的园丁，精心呵护着祖国的花朵，让离开了家长怀抱的我们同样拥有父母般的关怀；您是不知疲倦的马达，尽力维持着学校宿管的运转，以校为家，用微薄的工资对学校做出了难以言表的贡献。</p>
+<p style="text-indent:2em;"> 
+    我们忘不了，看到干净整洁的宿舍时，内心的畅然；忘不了，思家孤寂时，您温存的话语慈爱的笑脸；忘不了，午夜梦回,看到寝室温馨布局时的温暖……再华丽的词藻也无法形容我们内心的感激，再美丽的语言在此刻也显得苍白无力，千言万语汇成一句话来表达我们的心声，那就是谢谢您！在今后的日子里，我们会更加努力，争取取得优异的成绩，来回报您的心血与汗水。
+<p style="text-indent:2em;"> 
+    最后再次感谢您，并衷心的祝愿您：身体健康，工作顺利，合家欢乐，万事如意！</p>
+<p style="text-indent:2em;">    此致</p>
+<p class="box">
+    敬礼
+</p>
+<p style="text-align: right;">初2021级7班男生寝室的所有人</p>
+<p style="text-align: right;">2023年2月25日</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<b>请记住他们：</p>
+<p style="text-indent:2em;">陈劲宇、范泓嘉、高梓程、何东旭、黄睿鹏、李厚辰、梁锐杰、林秘丞、林文博、刘楚晗、刘芷汛、刘卓奇、彭新鸿、蒲实、谭粟文、王浩然、王伟杰、王梓恒、肖彦博、弋凯尧、张晗、朱宏金、张秉苒</p>
+    
+</b>
+<p></p>
+<p></p>
+<p></p>
+
+{% endblock content %}

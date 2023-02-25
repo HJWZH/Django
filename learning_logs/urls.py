@@ -24,4 +24,8 @@ urlpatterns = [
     path('users/register/ok/', views.ok, name="ok"),
     #path('image/code/', views.img_code,name='code'),
     path('users/remove/',views.remove,name='remove'),
+    path('goodbye-mszhao/',views.goodbyemszhao,name='goodbye-mszhao'),
+    path('home/',views.important,name='home'),
+    path('we-are-married/',views.we_are_married,name='we-are-married'),
+    path('brief-introduction',views.brief_introduction,name='brief-introduction'),
 ]

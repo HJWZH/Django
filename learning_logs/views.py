@@ -17,7 +17,7 @@ def index(request):
     """The home page for Learning Log."""
     return render(request, 'learning_logs/index.html')
 
-@login_required
+#@login_required
 def topics(request):
     """Show all topics."""
     topics = Topic.objects.order_by('date_added')
@@ -143,7 +143,7 @@ def remove(request):
                 return HttpResponse(f'{a}已被删除!')  # 返回一个界面，输入该界面的URL
     else:
         if request.user.username != "wangziheng":
-            return HttpResponse(f'权限不足！！！仅限管理员HJ(WZH)可更改！！！')
+            return HttpResponse(f'权限不足！！！仅限管理员HJ可更改！！！')
         # 如果是一个get请求，将创建一个空表单
         else:
             forms = USERSREMOVE()
@@ -156,3 +156,11 @@ def test(request):
             a=user[i].username
             b.append(a)
         messages.success(request,f'目前用户:{b}')
+def goodbyemszhao(request):
+    return render(request,'learning_logs/goodbyemszhao.html')
+def important(request):
+    return render(request,'learning_logs/important.html')
+def we_are_married(request):
+    return render(request,'learning_logs/we-are-married.html')
+def brief_introduction(request):
+    return render(request,'learning_logs/brief_introduction.html')
